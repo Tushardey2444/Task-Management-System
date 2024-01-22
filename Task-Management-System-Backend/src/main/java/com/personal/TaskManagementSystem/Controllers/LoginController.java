@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/login")
+@CrossOrigin(origins = "*", methods = {RequestMethod.POST})
 public class LoginController {
     @Autowired
     private LoginService loginService;
