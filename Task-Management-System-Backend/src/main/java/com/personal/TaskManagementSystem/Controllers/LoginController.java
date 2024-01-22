@@ -26,7 +26,6 @@ public class LoginController {
     @PostMapping(path = "/registrationDetails")
     public ResponseEntity<Register> registrationDetails(@RequestBody LoginRequest loginRequest){
         Register register=loginService.registrationDetails(loginRequest);
-//        System.out.println(register.getRegisterId()+" "+register.getFullName()+" "+register.getPhoneNumber()+" "+register.getDob());
         if(register==null){
             return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
         }

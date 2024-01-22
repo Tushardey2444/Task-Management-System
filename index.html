@@ -44,16 +44,16 @@
                 <div class="modal-header">Register</div>
                 <div class="modal-body">
                     <label for="name">Full Name</label>
-                    <input type="text" class="form-control mb-4" name="name" placeholder="Enter Your Name" required>
+                    <input type="text" class="form-control mb-4" name="name" placeholder="Enter Your Name" id="fullName" required>
                     <label for="phone">Phone No.</label>
-                    <input type="number" class="form-control mb-4" name="phone" placeholder="Enter Your Contact Number" required>
+                    <input type="number" class="form-control mb-4" name="phone" placeholder="Enter Your Contact Number" id="phoneNo" required>
                     <label for="DOB">Date Of Birth</label>
-                    <input type="date" class="form-control mb-4" name="DOB" required>
+                    <input type="date" class="form-control mb-4" name="DOB" id="dateOfBirth" required>
                     <label for="email">Email</label>
-                    <input type="email" class="form-control mb-4" name="email" placeholder="Enter Your Email" required>
+                    <input type="email" class="form-control mb-4" name="email" placeholder="Enter Your Email" id="Email" required>
                     <label for="password">Password</label>
-                    <input type="password" class="form-control mb-4" name="password" placeholder="Enter Your Password" required>
-                    <button class="btn btn-outline-success mb-2">Register</button>
+                    <input type="password" class="form-control mb-4" name="password" placeholder="Enter Your Password" id="Pass" required>
+                    <button class="btn btn-outline-success mb-2" id="registerBtn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#messageModal">Register</button>
                     <div class="loginAcc">
                         <a href="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Already Have An Account?</a>
                     </div>
@@ -65,6 +65,26 @@
         </div>
     </div>
     <!-- end of register modal  -->
+
+    <!-- resgister message modal -->
+
+    <div class="modal fade" id="messageModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="messageHead"></h3>
+                </div>
+                <div class="modal-body">
+                    <p id="messageBody"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="" id="messageFoot"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end of register message modal -->
 
     <div class="wrapper">
         <div class="containers">
