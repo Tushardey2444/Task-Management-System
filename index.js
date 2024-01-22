@@ -79,6 +79,8 @@ registerButton.addEventListener('click', async() => {
         body.textContent = 'Registered Successfully';
         let foot = document.querySelector('#messageFoot');
         foot.textContent = 'Login'
+        foot.classList.remove('btn');
+        foot.classList.remove('btn-outline-danger');
         foot.classList.add('btn');
         foot.classList.add('btn-outline-success');
         foot.setAttribute("data-bs-toggle", "modal");
@@ -92,8 +94,17 @@ registerButton.addEventListener('click', async() => {
         body.textContent = 'User is already registered';
         let foot = document.querySelector('#messageFoot');
         foot.textContent = 'Ok'
+        foot.classList.remove('btn');
+        foot.classList.remove('btn-outline-success');
         foot.classList.add('btn');
         foot.classList.add('btn-outline-danger');
         foot.setAttribute("data-bs-dismiss", "modal");
+        foot.removeAttribute("data-bs-toggle", "modal");
+        foot.removeAttribute("data-bs-target", "#loginModal");
     }
+    name.value = '';
+    phone.value = '';
+    dob.value = '';
+    email.value = '';
+    pass.value = '';
 });
