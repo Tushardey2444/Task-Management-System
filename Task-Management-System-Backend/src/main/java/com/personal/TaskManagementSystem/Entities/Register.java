@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "register")
 @Data
+//Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode, Value
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

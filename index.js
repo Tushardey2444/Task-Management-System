@@ -1,6 +1,9 @@
 let loginButton = document.querySelector('#loginBtn');
-let emailId = '';
-let password = '';
+let emailid = '';
+let Password = '';
+
+
+
 loginButton.addEventListener('click', async function() {
     let email = document.querySelector('#email1');
     let pass = document.querySelector('#password1');
@@ -11,7 +14,6 @@ loginButton.addEventListener('click', async function() {
     };
     let result = await fetch(url, {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -19,7 +21,28 @@ loginButton.addEventListener('click', async function() {
         body: JSON.stringify(loginRequest)
 
     });
-    console.log(result);
-    let finalResult = await result.json();
-    console.log(finalResult);
+    // let r = await result.text();
+    // console.log(r);
+    let details = await getDetails(result.status, email, pass);
+
 });
+
+async function getDetails(status, email, pass) {
+    if (status === 200) {
+        emailid = email.value;
+        Password = pass.value;
+        let otherInfo = await fetch('http://localhost:8090/login/registrationDetails', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                emailId: emailid,
+                password: Password
+            })
+        })
+        let res = await otherInfo.json();
+        return res;
+    }
+}

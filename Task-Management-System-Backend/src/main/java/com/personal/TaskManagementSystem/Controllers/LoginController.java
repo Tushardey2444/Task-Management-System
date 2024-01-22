@@ -1,5 +1,6 @@
 package com.personal.TaskManagementSystem.Controllers;
 
+import com.personal.TaskManagementSystem.Entities.Register;
 import com.personal.TaskManagementSystem.Requests.LoginRequest;
 import com.personal.TaskManagementSystem.Services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,14 @@ public class LoginController {
         }else{
             return new ResponseEntity<>("Invalid EmailId Or Password",HttpStatus.BAD_REQUEST);
         }
+    }
+    @PostMapping(path = "/registrationDetails")
+    public ResponseEntity<Register> registrationDetails(@RequestBody LoginRequest loginRequest){
+        Register register=loginService.registrationDetails(loginRequest);
+//        System.out.println(register.getRegisterId()+" "+register.getFullName()+" "+register.getPhoneNumber()+" "+register.getDob());
+        if(register==null){
+            return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(register,HttpStatus.OK);
     }
 }

@@ -2,8 +2,10 @@ package com.personal.TaskManagementSystem.Requests;
 
 import jakarta.persistence.Column;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class RegisterRequest {
     private String fullName;
 
