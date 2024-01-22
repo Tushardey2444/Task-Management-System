@@ -1,5 +1,6 @@
 package com.personal.TaskManagementSystem.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,6 +18,7 @@ public class Login {
     private String password;
 
     @JoinColumn
+    @JsonIgnore
     @OneToOne
     private Register register;
 }
