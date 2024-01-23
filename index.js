@@ -23,6 +23,8 @@ loginButton.addEventListener('click', async() => {
     let details = await getDetails(result.status, email, pass);
     if (details !== undefined) {
 
+    } else {
+
     }
 });
 

@@ -15,7 +15,7 @@
 }
 
 .navbar {
-    height: 15%;
+    height: 100px;
     width: 90%;
     margin: 0 auto;
 }
@@ -25,7 +25,7 @@
     display: block;
     margin: auto;
     height: 3px;
-    width: 65%;
+    width: 80%;
     background: transparent;
     transition: width 1s ease, background-color 2s ease;
 }
@@ -60,4 +60,61 @@
     text-decoration: none;
     color: rgb(68, 68, 68);
     text-shadow: 2px 2px 2px #b8b8b8;
+}
+
+.loginRegister {
+    display: flex;
+}
+
+.showDiv {
+    height: 100%;
+    display: none;
+    margin-right: 200px;
+}
+
+.showDiv img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid grey;
+}
+
+.showDiv1 {
+    position: relative;
+    align-self: flex-end;
+}
+
+.dropdowns {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 10px;
+}
+
+.dropdowns ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.dropdowns ul>li {
+    padding: 5px;
+}
+
+.dropdowns h5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.showDiv1:hover .dropdowns {
+    display: block;
+}
+
+.dropdowns ul>li:hover {
+    transition: 0.8s;
+    background-color: white;
+    border-radius: 8px;
+    color: black;
 }

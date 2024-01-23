@@ -14,29 +14,6 @@
 </head>
 
 <body>
-    <!-- login modal -->
-    <div class="modal fade" id="loginModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">Login</div>
-                <div class="modal-body">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control mb-4" name="email" placeholder="Enter Your Email" required id="email1">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control mb-4" name="password" placeholder="Enter Your Password" required id="password1">
-                    <button class="btn btn-outline-success mb-2" id="loginBtn">Login</button>
-                    <div class="createAcc">
-                        <a href="#registerModal" data-bs-toggle="modal" data-bs-dismiss="modal">Don't Have An Account?</a>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end of login modal  -->
-
     <!-- Register modal -->
     <div class="modal fade" id="registerModal">
         <div class="modal-dialog">
@@ -67,7 +44,6 @@
     <!-- end of register modal  -->
 
     <!-- resgister message modal -->
-
     <div class="modal fade" id="messageModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -83,8 +59,63 @@
             </div>
         </div>
     </div>
-
     <!-- end of register message modal -->
+
+    <!-- login modal -->
+    <div class="modal fade" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">Login</div>
+                <div class="modal-body">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control mb-4" name="email" placeholder="Enter Your Email" required id="email1">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control mb-4" name="password" placeholder="Enter Your Password" required id="password1">
+                    <button class="btn btn-outline-success mb-2" id="loginBtn">Login</button>
+                    <div class="createAcc">
+                        <a href="#registerModal" data-bs-toggle="modal" data-bs-dismiss="modal">Don't Have An Account?</a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of login modal  -->
+
+    <!-- My profile modal -->
+    <div class="modal fade" id="MyProfile">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>My Profile</h3>
+                </div>
+                <div class="modal-body" id="MyProfileBody">
+                    <label for="EMAIL">Email Id</label>
+                    <input type="email" name="EMAIL" id="EMAIL" class="form-control mb-3" readonly>
+                    <label for="NAME">Name</label>
+                    <input type="text" name="NAME" id="NAME" class="form-control mb-3" readonly>
+                    <label for="CONTACT">Contact</label>
+                    <input type="number" name="CONTACT" id="CONTACT" class="form-control mb-3" readonly>
+                    <label for="DOB">Date Of Birth</label>
+                    <input type="date" name="DOB" id="DOB" class="form-control mb-4" readonly>
+                    <div class="buttons">
+                        <button class="btn btn-success btn-sm me-3">Edit</button>
+                        <button class="btn btn-success btn-sm" disabled> Save Changes</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button data-bs-dismiss="modal" class="btn btn-danger btn-sm">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of My profile modal -->
+
+    <!-- confirm password modal -->
+
+    <!-- end of confirm password modal -->
 
     <div class="wrapper">
         <div class="containers">
@@ -93,7 +124,7 @@
                     <img src="./images/logo.png" alt="website logo">
                     <label>Management System</label>
                 </div>
-                <div class="loginRegister d-flex me-3">
+                <div class="loginRegister me-3">
                     <div class="login me-4">
                         <a href="#loginModal" data-bs-toggle="modal">Login</a>
                     </div>
@@ -101,7 +132,25 @@
                         <a href="#registerModal" data-bs-toggle="modal">Register</a>
                     </div>
                 </div>
+                <div class="showDiv">
+                    <div class="showDiv1">
+                        <img src="./images/user_icon.png" alt="User image">
+                        <div class="dropdowns">
+                            <ul>
+                                <div>
+                                    <li class="emailList">
+                                        <h5>tushar@gmail.com</h5>
+                                    </li>
+                                </div>
+                                <li class="myProfile" data-bs-toggle="modal" data-bs-target="#MyProfile">My Profile</li>
+                                <li class="changePass">Change Password</li>
+                                <li class="logout">Logout</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </nav>
+
         </div>
     </div>
     <script src="./index.js"></script>
