@@ -4,6 +4,9 @@ let loginButton = document.querySelector('#loginBtn');
 let emailid = '';
 let Password = '';
 
+function openModal(){
+    $('#messageModal').modal('show');
+}
 loginButton.addEventListener('click', async() => {
     let email = document.querySelector('#email1');
     let pass = document.querySelector('#password1');
@@ -22,9 +25,34 @@ loginButton.addEventListener('click', async() => {
     });
     let details = await getDetails(result.status, email, pass);
     if (details !== undefined) {
+        let loginRegister=document.querySelector('.loginRegister');
+        loginRegister.style.display='none';
+        let showDiv=document.querySelector('.showDiv');
+        showDiv.style.display='flex';
+        let emailList=document.querySelector('.emailList h5');
+        emailList.textContent=emailid;
+        email.value='';
+        pass.value='';
+        let NAME=document.getElementById('NAME');
+        NAME.value=details.fullName;
+        let CONTACT=document.getElementById('CONTACT');
+        CONTACT.value=details.phoneNumber;
+        let DOB=document.getElementById('DOB');
+        DOB.value=details.dob;
 
     } else {
-
+        let header=document.getElementById('messageHead');
+        header.textContent='Failed';
+        let body=document.getElementById('messageBody');
+        body.textContent='Invalid Email Or Password';
+        let footer=document.getElementById('messageFoot');
+        footer.textContent='Ok';
+        footer.classList.add('btn');
+        footer.classList.add('btn-danger');
+        footer.setAttribute("data-bs-dismiss","modal");
+        openModal();
+        email.value='';
+        pass.value='';
     }
 });
 

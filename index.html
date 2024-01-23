@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -43,7 +44,7 @@
     </div>
     <!-- end of register modal  -->
 
-    <!-- resgister message modal -->
+    <!-- register message modal -->
     <div class="modal fade" id="messageModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -71,7 +72,7 @@
                     <input type="email" class="form-control mb-4" name="email" placeholder="Enter Your Email" required id="email1">
                     <label for="password">Password</label>
                     <input type="password" class="form-control mb-4" name="password" placeholder="Enter Your Password" required id="password1">
-                    <button class="btn btn-outline-success mb-2" id="loginBtn">Login</button>
+                    <button class="btn btn-outline-success mb-2" id="loginBtn" data-bs-dismiss="modal" >Login</button>
                     <div class="createAcc">
                         <a href="#registerModal" data-bs-toggle="modal" data-bs-dismiss="modal">Don't Have An Account?</a>
                     </div>
@@ -92,8 +93,6 @@
                     <h3>My Profile</h3>
                 </div>
                 <div class="modal-body" id="MyProfileBody">
-                    <label for="EMAIL">Email Id</label>
-                    <input type="email" name="EMAIL" id="EMAIL" class="form-control mb-3" readonly>
                     <label for="NAME">Name</label>
                     <input type="text" name="NAME" id="NAME" class="form-control mb-3" readonly>
                     <label for="CONTACT">Contact</label>
@@ -113,8 +112,24 @@
     </div>
     <!-- end of My profile modal -->
 
-    <!-- confirm password modal -->
 
+    <!-- confirm password modal -->
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Confirm Password</h3>
+                </div>
+                <div class="modal-body">
+                    <label for="confirmPassword">Password</label>
+                    <input type="text" id="confirmPassword" required>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-success" id="confirmButton">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- end of confirm password modal -->
 
     <div class="wrapper">
@@ -139,7 +154,7 @@
                             <ul>
                                 <div>
                                     <li class="emailList">
-                                        <h5>tushar@gmail.com</h5>
+                                        <h5></h5>
                                     </li>
                                 </div>
                                 <li class="myProfile" data-bs-toggle="modal" data-bs-target="#MyProfile">My Profile</li>
